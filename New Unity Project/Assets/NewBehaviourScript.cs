@@ -56,19 +56,19 @@ public class NewBehaviourScript : MonoBehaviour
             transform.Rotate(0, 0, -this.transform.eulerAngles.z);
         }
 
-        if (this.transform.rotation.eulerAngles.x < 50 && this.transform.rotation.eulerAngles.x > -50)
-        {
-            transform.Rotate(-v, h, 0);
-        }
-
-        if (this.transform.rotation.eulerAngles.x >= 50)
+        if (this.transform.rotation.eulerAngles.x >= 70 && this.transform.rotation.eulerAngles.x <= 80)
         {
             transform.Rotate(-1, 0, 0);
         }
 
-        if (this.transform.rotation.eulerAngles.x <= -50)
+        else if (this.transform.rotation.eulerAngles.x <= 310 && this.transform.rotation.eulerAngles.x >= 300)
         {
             transform.Rotate(1, 0, 0);
+        }
+
+        else
+        {
+            transform.Rotate(-v, h, 0);
         }
     }
 }
