@@ -60,6 +60,16 @@ public class NewBehaviourScript : MonoBehaviour
         {
             transform.Rotate(-v, h, 0);
         }
+
+        if (this.transform.rotation.eulerAngles.x >= 50)
+        {
+            transform.Rotate(-1, 0, 0);
+        }
+
+        if (this.transform.rotation.eulerAngles.x <= -50)
+        {
+            transform.Rotate(1, 0, 0);
+        }
     }
 }
 
