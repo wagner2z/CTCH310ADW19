@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+
+    public GameObject Bullet;
+    public Transform bulletSpawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +17,16 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         move();
+        var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
+        var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
+
+        transform.Rotate(0, x, 0);
+        transform.Translate(0, 0, z);
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            Fire();
+        }
     }
 
     void move()
@@ -70,6 +83,18 @@ public class NewBehaviourScript : MonoBehaviour
         {
             transform.Rotate(-v, h, 0);
         }
+    }
+
+    void Fire()
+    {
+        // Create bullet
+        var newBullet = (GameObject)Instantiate(Bullet, bulletSpawn.position, bulletSpawn.rotation);
+
+        // add velocity
+        newBullet.GetComponent<Rigidbody>().velocity = newBullet.transform.forward * 10;
+
+        // destroy bullet after 2s
+        Destroy(newBullet, 2.0f);
     }
 }
 

@@ -1153,23 +1153,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4972385323863216, guid: 91db971f356a07d42b095b71e57a75af, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 5.820766e-10
+      value: -0.0016240512
       objectReference: {fileID: 0}
     - target: {fileID: 4972385323863216, guid: 91db971f356a07d42b095b71e57a75af, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0038585817
+      value: 0.0125250695
       objectReference: {fileID: 0}
     - target: {fileID: 4972385323863216, guid: 91db971f356a07d42b095b71e57a75af, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999926
+      value: 0.9999201
       objectReference: {fileID: 0}
     - target: {fileID: 4972385323863216, guid: 91db971f356a07d42b095b71e57a75af, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.44200003
+      value: 1.4350001
       objectReference: {fileID: 0}
     - target: {fileID: 4972385323863216, guid: 91db971f356a07d42b095b71e57a75af, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.0005304515
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972385323863216, guid: 91db971f356a07d42b095b71e57a75af, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.67797077
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972385323863216, guid: 91db971f356a07d42b095b71e57a75af, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.13016105
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972385323863216, guid: 91db971f356a07d42b095b71e57a75af, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.018246368
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972385323863216, guid: 91db971f356a07d42b095b71e57a75af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.187
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972385323863216, guid: 91db971f356a07d42b095b71e57a75af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.058000002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91db971f356a07d42b095b71e57a75af, type: 3}
@@ -2090,6 +2110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eaa2dba507094069b018327b6b42dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Bullet: {fileID: 1220484190907315518, guid: b38591a4485554740acbaed7ddbe8e4f, type: 3}
+  bulletSpawn: {fileID: 1457479818}
 --- !u!1001 &1479152634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3075,8 +3097,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e24108fa71be4b679e76993c279dcdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intel: 5
-  hitOnHead: 1
+  intel: 3
+  hitOnHead: 0
   readBook: 0
 --- !u!1001 &2029596903
 PrefabInstance:
