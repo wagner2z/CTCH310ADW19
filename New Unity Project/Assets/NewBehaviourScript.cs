@@ -7,6 +7,17 @@ public class NewBehaviourScript : MonoBehaviour
 
     public GameObject Bullet;
     public Transform bulletSpawn;
+    public AudioClip shot;
+
+    private AudioSource source;
+    private float volLowRange = 0.5f;
+    private float volHighRange = 1.0f;
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +28,13 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         move();
+        // move the camera around
         var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
         var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
 
         transform.Rotate(0, x, 0);
         transform.Translate(0, 0, z);
+        //--------------------------------------------------------
 
         if(Input.GetKeyDown(KeyCode.F))
         {
@@ -31,7 +44,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     void move()
     {
-        
+
         Cursor.lockState = CursorLockMode.Locked;
         if (Input.GetKey(KeyCode.DownArrow))
         {
@@ -89,12 +102,18 @@ public class NewBehaviourScript : MonoBehaviour
     {
         // Create bullet
         var newBullet = (GameObject)Instantiate(Bullet, bulletSpawn.position, bulletSpawn.rotation);
-
+        FireNoise();
         // add velocity
         newBullet.GetComponent<Rigidbody>().velocity = newBullet.transform.forward * 10;
 
         // destroy bullet after 2s
         Destroy(newBullet, 2.0f);
+    }
+
+    void FireNoise()
+    {
+        float vol = Random.Range(volLowRange, volHighRange);
+        source.PlayOneShot(shot, vol);
     }
 }
 
